@@ -43,7 +43,7 @@
 
 Console.Clear();
 
-double TrueN ()
+double TrueN()
 {
     bool BoolN = Double.TryParse(Console.ReadLine(), out double N);
     while (BoolN == false)
@@ -60,7 +60,7 @@ void PointOfIntersection(double KK1, double BB1, double KK2, double BB2)
     else if (KK1 == KK2 && BB1 == BB2) Console.WriteLine("Данные прямые идентичны");
     else
     {
-        double x = (BB2 - BB1)/(KK1-KK2);
+        double x = (BB2 - BB1) / (KK1 - KK2);
         double y = KK1 * x + BB1;
         Console.WriteLine($"x = {x}, y = {y}");
     }
@@ -75,4 +75,4 @@ double k2 = TrueN();
 Console.WriteLine("Введите значение для b2: ");
 double b2 = TrueN();
 
-PointOfIntersection(k1,k2,b1,b2);
+PointOfIntersection(k1, k2, b1, b2);
