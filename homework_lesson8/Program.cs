@@ -221,61 +221,29 @@
 
 Console.Clear();
 
-int[,] FillArray()
+void FillArray(int[,] arr)
 {
-    int m = 4;
-    int n = 4;
-    int number = 1;
-    int[,] arr = new int[m, n];
-    for (int i = 0; i < 1; i++)
+    int m = 0;
+    int n = 0;
+    
+    for (int number = 1; number <= 16; number++)
     {
-        for (int j = 0; j < arr.GetLength(1); j++)
-        {
-            arr[i, j] = number;
-            number++;
-        }
-    }
-    int antiCount = 1;
-    for (int count = m - 1; count > 1; count--)
-    {
-        if (count == 3)
-        {
-            for (int i = antiCount; i <= count; i++)
-            {
-                arr[i, count] = number;
-                number++;
-            }
-            antiCount++;
-            for (int j = antiCount; j >= 0; j--)
-            {
-                arr[count, j] = number;
-                number++;
-            }
-            antiCount = 0;
-        }
-        if (count == 2)
-        {
-            for (int i = count; i > 0; i--)
-            {
-                arr[i, antiCount] = number;
-                number++;
-            }
-            antiCount++;
-            for (int j = antiCount; j <= count; j++)
-            {
-                arr[antiCount, j] = number;
-                number++;
-            }
-            antiCount++;
-            for (int j = antiCount; j > 0; j--)
-            {
-                arr[antiCount, j] = number;
-                number++;
-            }
-        }
+        if (number >= 2 && number <= 4) n += 1;
+        
+        if (number >= 5 && number <= 7) m += 1;
+        
+        if (number >= 8 && number <= 10) n -= 1;
+        
+        if (number >= 11 && number <= 12) m -= 1;
+        
+        if (number >= 13 && number <= 14) n += 1;
 
+        if (number == 15) m += 1;
+
+        if (number == 16) n -= 1;
+
+        arr[m,n] = number;
     }
-    return arr;
 }
 
 void PrintArray(int[,] array)
@@ -287,5 +255,8 @@ void PrintArray(int[,] array)
     }
 }
 
-int[,] newestArray = FillArray();
-PrintArray(newestArray);
+int g = 4;
+int h = 4;
+int[,] array = new int [g,h];
+FillArray(array);
+PrintArray(array);
