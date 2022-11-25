@@ -225,24 +225,24 @@ void FillArray(int[,] arr)
 {
     int m = 0;
     int n = 0;
-    
+
     for (int number = 1; number <= 16; number++)
     {
         if (number >= 2 && number <= 4) n += 1;
-        
+
         if (number >= 5 && number <= 7) m += 1;
-        
+
         if (number >= 8 && number <= 10) n -= 1;
-        
+
         if (number >= 11 && number <= 12) m -= 1;
-        
+
         if (number >= 13 && number <= 14) n += 1;
 
         if (number == 15) m += 1;
 
         if (number == 16) n -= 1;
 
-        arr[m,n] = number;
+        arr[m, n] = number;
     }
 }
 
@@ -257,6 +257,6 @@ void PrintArray(int[,] array)
 
 int g = 4;
 int h = 4;
-int[,] array = new int [g,h];
+int[,] array = new int[g, h];
 FillArray(array);
 PrintArray(array);
