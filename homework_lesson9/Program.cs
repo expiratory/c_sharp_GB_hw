@@ -49,13 +49,13 @@ Console.Clear();
 int Akkerman(int akk, int m, int n)
 {
     if (m == 0) akk = n + 1;
-    else if (m > 0 && n == 0) akk = Akkerman(akk,m-1,1);
-    else if (m>0 && n >0) akk = Akkerman(akk, m-1, Akkerman(akk,m,n-1));
+    else if (m > 0 && n == 0) akk = Akkerman(akk, m - 1, 1);
+    else if (m > 0 && n > 0) akk = Akkerman(akk, m - 1, Akkerman(akk, m, n - 1));
     return akk;
 }
 
-int numM=3;
-int numN=2;
+int numM = 3;
+int numN = 2;
 int Akker = 0;
-Akker = Akkerman(Akker,numM,numN);
+Akker = Akkerman(Akker, numM, numN);
 Console.WriteLine(Akker);
