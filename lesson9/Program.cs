@@ -66,6 +66,17 @@
 // два числа A и B, и возводит число A в целую степень B
 // с помощью рекурсии
 
+int TrueN ()
+{
+    bool BoolN = Int32.TryParse(Console.ReadLine(), out int N);
+    while (BoolN == false)
+    {
+        Console.WriteLine("Вы ввели то, что не является числом. Попробуйте заново: ");
+        BoolN = Int32.TryParse(Console.ReadLine(), out N);
+    }
+    return N;
+}
+
 Console.Clear();
 
 void LooksLikeMathPow(double grade, int m, int n)
@@ -85,7 +96,9 @@ void LooksLikeMathPow(double grade, int m, int n)
     else if (n == 0) Console.WriteLine(1);
 }
 
-int numA = 2;
-int numB = -3;
+Console.WriteLine("Введите значение A: ");
+int numA = TrueN();
+Console.WriteLine("Введите значение B: ");
+int numB = TrueN();
 double gradation = 1;
 LooksLikeMathPow(gradation, numA, numB);
