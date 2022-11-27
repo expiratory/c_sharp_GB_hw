@@ -54,56 +54,56 @@
 // Напишите программу, которая будет находить строку
 // с наименьшей суммой элементов.
 
-// Console.Clear();
+Console.Clear();
 
-// int[,] FillArray()
-// {
-//     int m = 4;
-//     int n = 4;
-//     int[,] arr = new int[m, n];
-//     for (int i = 0; i < arr.GetLength(0); i++)
-//     {
-//         for (int j = 0; j < arr.GetLength(1); j++) arr[i, j] = new Random().Next(1, 10);
-//     }
-//     return arr;
-// }
+int[,] FillArray()
+{
+    int m = 4;
+    int n = 4;
+    int[,] arr = new int[m, n];
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1); j++) arr[i, j] = new Random().Next(1, 10);
+    }
+    return arr;
+}
 
-// void PrintArray(int[,] array)
-// {
-//     for (int k = 0; k < array.GetLength(0); k++)
-//     {
-//         for (int l = 0; l < array.GetLength(1); l++) Console.Write($"{array[k, l]} ");
-//         Console.WriteLine();
-//     }
-// }
+void PrintArray(int[,] array)
+{
+    for (int k = 0; k < array.GetLength(0); k++)
+    {
+        for (int l = 0; l < array.GetLength(1); l++) Console.Write($"{array[k, l]} ");
+        Console.WriteLine();
+    }
+}
 
-// void MaxSumLine(int[,] newArray)
-// {
-//     int[] sumArray = new int[newArray.GetLength(0)];
-//     for (int h = 0; h < newArray.GetLength(0); h++)
-//     {
-//         int sum = 0;
-//         for (int g = 0; g < newArray.GetLength(1); g++) sum += newArray[h, g];
-//         sumArray[h] = sum;
-//     }
-//     int minLine = 0;
-//     int min = sumArray[0];
-//     for (int count = 0; count < sumArray.Length; count++)
-//     {
-//         if (sumArray[count] < min)
-//         {
-//             min = sumArray[count];
-//             minLine = count;
-//         }
-//     }
-//     Console.WriteLine($"Сумма элементов каждой отдельной строки по порядку: {String.Join(",", sumArray)}");
-//     Console.WriteLine($"Номер строки с минимальной суммой ее элементов равен {minLine + 1}");
-// }
+void MinSumLine(int[,] newArray)
+{
+    int[] sumArray = new int[newArray.GetLength(0)];
+    for (int h = 0; h < newArray.GetLength(0); h++)
+    {
+        int sum = 0;
+        for (int g = 0; g < newArray.GetLength(1); g++) sum += newArray[h, g];
+        sumArray[h] = sum;
+    }
+    int minLine = 0;
+    int min = sumArray[0];
+    for (int count = 0; count < sumArray.Length; count++)
+    {
+        if (sumArray[count] < min)
+        {
+            min = sumArray[count];
+            minLine = count;
+        }
+    }
+    Console.WriteLine($"Сумма элементов каждой отдельной строки по порядку: {String.Join(",", sumArray)}");
+    Console.WriteLine($"Номер строки с минимальной суммой ее элементов равен {minLine + 1}");
+}
 
-// int[,] newestArray = FillArray();
-// PrintArray(newestArray);
-// Console.WriteLine();
-// MaxSumLine(newestArray);
+int[,] newestArray = FillArray();
+PrintArray(newestArray);
+Console.WriteLine();
+MinSumLine(newestArray);
 
 // Задача 58: Задайте две матрицы. Напишите программу, которая
 // будет находить произведение двух матриц.
@@ -219,44 +219,44 @@
 // Задача 62: Напишите программу, которая заполнит спирально массив 4 на 4.
 // Например, на выходе получается вот такой массив:
 
-Console.Clear();
+// Console.Clear();
 
-void FillArray(int[,] arr)
-{
-    int m = 0;
-    int n = 0;
+// void FillArray(int[,] arr)
+// {
+//     int m = 0;
+//     int n = 0;
 
-    for (int number = 1; number <= 16; number++)
-    {
-        if (number >= 2 && number <= 4) n += 1;
+//     for (int number = 1; number <= 16; number++)
+//     {
+//         if (number >= 2 && number <= 4) n += 1;
 
-        if (number >= 5 && number <= 7) m += 1;
+//         if (number >= 5 && number <= 7) m += 1;
 
-        if (number >= 8 && number <= 10) n -= 1;
+//         if (number >= 8 && number <= 10) n -= 1;
 
-        if (number >= 11 && number <= 12) m -= 1;
+//         if (number >= 11 && number <= 12) m -= 1;
 
-        if (number >= 13 && number <= 14) n += 1;
+//         if (number >= 13 && number <= 14) n += 1;
 
-        if (number == 15) m += 1;
+//         if (number == 15) m += 1;
 
-        if (number == 16) n -= 1;
+//         if (number == 16) n -= 1;
 
-        arr[m, n] = number;
-    }
-}
+//         arr[m, n] = number;
+//     }
+// }
 
-void PrintArray(int[,] array)
-{
-    for (int k = 0; k < array.GetLength(0); k++)
-    {
-        for (int l = 0; l < array.GetLength(1); l++) Console.Write($"{array[k, l],4}");
-        Console.WriteLine();
-    }
-}
+// void PrintArray(int[,] array)
+// {
+//     for (int k = 0; k < array.GetLength(0); k++)
+//     {
+//         for (int l = 0; l < array.GetLength(1); l++) Console.Write($"{array[k, l],4}");
+//         Console.WriteLine();
+//     }
+// }
 
-int g = 4;
-int h = 4;
-int[,] array = new int[g, h];
-FillArray(array);
-PrintArray(array);
+// int g = 4;
+// int h = 4;
+// int[,] array = new int[g, h];
+// FillArray(array);
+// PrintArray(array);
